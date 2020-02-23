@@ -4,10 +4,6 @@ plugins {
 	id 'java'
 }
 
-group = 'mail'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
-
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -26,3 +22,5 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 }
+
+bootJar { mainClassName = 'mail.sender.MailSenderApplication'}
