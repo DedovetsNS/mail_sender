@@ -25,7 +25,7 @@ public class LibraryListener {
     }
 
     @RabbitListener(queues = "query-library-mail-send")
-    public void sendMailFromLibrary(MessageDto message)  {
+    public void sendMailFromLibrary(MessageDto message) {
         emailService.sendSimpleMessage(
                 message.getTo(),
                 message.getSubject(),
@@ -34,7 +34,7 @@ public class LibraryListener {
     }
 
     @PostConstruct
-    public void declareQueue(){
+    public void declareQueue() {
         amqpAdmin.declareQueue(new Queue("query-library-mail-send"));
     }
 }
